@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "data-table-app": {
+      
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -14,6 +15,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -30,6 +32,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {      
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

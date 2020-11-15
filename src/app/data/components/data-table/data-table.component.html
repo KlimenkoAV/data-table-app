@@ -1,0 +1,12 @@
+<div class="table" #table>
+    <ng-container  *ngIf="this.data">
+        <span class="table__cell table__cell--header" *ngFor="let column of this.data.meta.columns">
+            {{column.title}}
+        </span>
+        <ng-container class="table__row" *ngFor="let row of this.data.data">
+            <span class="table__cell" *ngFor="let column of this.data.meta.columns; let i = index">
+                {{row[i]}}
+            </span>
+        </ng-container>
+    </ng-container>
+</div>

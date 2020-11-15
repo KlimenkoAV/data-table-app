@@ -1,0 +1,22 @@
+@import "variables";
+
+:host {
+  overflow: auto;
+  display: block;
+  padding: 10px;
+}
+
+.table {
+  display: grid;
+  border-left: 1px solid $border-main;
+  &__cell {
+    white-space: nowrap;
+    padding: 0.25rem;
+    border-bottom: 1px solid $border-main;
+    border-right: 1px solid $border-main;
+
+    &--header {
+      border-top: 1px solid $border-main;
+    }
+  }
+}

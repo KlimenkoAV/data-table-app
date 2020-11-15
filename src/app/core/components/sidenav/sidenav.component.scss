@@ -1,0 +1,32 @@
+@import "variables";
+
+.sidenav {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 2rem;
+}
+
+.submenu {
+  margin: 0;
+  padding: 0.25rem 0 1rem 0;
+  list-style: none;
+  &__item {
+    padding-bottom: 0.25rem;
+  }
+  &__link {
+    display: block;
+    padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+    font-size: 0.75rem;
+    text-decoration: none;
+    border-left: 5px solid transparent;
+    color: $gray-text;
+    &--active {
+      background-color: $gray-bg-dark;
+      border-left: 5px solid $gray-text;
+      color: $gray-text;
+    }
+    &:hover {
+      color: $gray-text;
+    }
+  }
+}

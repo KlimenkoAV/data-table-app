@@ -1,0 +1,32 @@
+<div class="pagination-wrap">
+    <ul class="pagination">
+      <li (click)="selectPage(currentPage - 1, $event)" [class.disabled]="currentPage == 1" class="pagination__item pagination__item--prev">
+          <a href="" title="Предыдущая" class="pagination__link">
+            <app-icon class="pagination__icon arrow--left" icon="arrow-right"> </app-icon>
+          </a>
+        </li>
+      <li (click)="selectPage(1, $event)" [class.disabled]="currentPage == 1" *ngIf="(currentPage - range) > 1" class="pagination__item">
+        <a href="" title="Первая" class="pagination__link">1</a>
+      </li>
+      <li class="disabled" (click)="cancelEvent($event)" *ngIf="(currentPage - range) > 1  && totalPages > 5" class="pagination__item">
+        <a href="" class="pagination__link">...</a>
+      </li>
+      <li *ngFor="let page of pages$ | async" (click)="selectPage(page, $event)" [class.pagination__item--active]="page == currentPage" class="pagination__item">
+        <a href=""  class="pagination__link">
+          {{ page }}
+        </a>
+      </li>
+      <li class="disabled" (click)="cancelEvent($event)" *ngIf="(currentPage + range) < totalPages  && totalPages > 5" class="pagination__item">
+        <a href="" class="pagination__link">...</a>
+      </li>
+      <li (click)="selectPage(totalPages, $event)" [class.disabled]="currentPage == totalPages" *ngIf="(currentPage + range) < totalPages" class="pagination__item">
+        <a href="" title="Последняя" class="pagination__link">{{ totalPages }}</a>
+      </li>
+      <li (click)="selectPage(currentPage + 1, $event)" [class.disabled]="currentPage == totalPages" class="pagination__item pagination__item--next">
+        <a href="" title="Следующая" class="pagination__link">
+            <app-icon class="pagination__icon" icon="arrow-right"> </app-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
