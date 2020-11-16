@@ -1,5 +1,5 @@
 <app-pagination 
-[offset]="paginationControl.valueChanges | async"
-(pageChange)="onPageChange($event)">
+    [offset]="paginationControl.valueChanges | async"
+    (pageChange)="onPageChange($event)">
 </app-pagination>
 <app-data-table [data]="data$ | async"></app-data-table>

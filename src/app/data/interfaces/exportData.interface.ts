@@ -7,7 +7,7 @@ export interface ExportData {
             key: string;
             title: string;
             primary?: boolean;
-            metricType?: string;
+            metricType?: "money" | "absolute" | "relative";
             currency?: string;
         }[]
     }

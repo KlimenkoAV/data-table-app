@@ -10,6 +10,8 @@
   display: grid;
   border-left: 1px solid $border-main;
   &__cell {
+    display: flex;
+    justify-content: space-between;
     white-space: nowrap;
     padding: 0.25rem;
     border-bottom: 1px solid $border-main;
@@ -17,6 +19,14 @@
 
     &--header {
       border-top: 1px solid $border-main;
+    }
+
+    &--total {
+      background-color: $gray-bg-main;
+    }
+
+    :not(:last-child) {
+      margin-right: 0.25rem;
     }
   }
 }

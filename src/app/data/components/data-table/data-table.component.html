@@ -1,12 +1,20 @@
 <div class="table" #table>
-    <ng-container  *ngIf="this.data">
-        <span class="table__cell table__cell--header" *ngFor="let column of this.data.meta.columns">
-            {{column.title}}
+    <ng-container  *ngIf="data">
+        <span class="table__cell table__cell--header" *ngFor="let column of data.meta.columns">
+            <span>
+                {{column.title}}
+            </span>
+            <span *ngIf="column.metricType === 'money'">
+                {{column.currency}}
+            </span>
         </span>
-        <ng-container class="table__row" *ngFor="let row of this.data.data">
-            <span class="table__cell" *ngFor="let column of this.data.meta.columns; let i = index">
-                {{row[i]}}
+        <ng-container class="table__row" *ngFor="let row of data.data">
+            <span class="table__cell" *ngFor="let column of data.meta.columns; let i = index">
+                    {{row[i]}}
             </span>
         </ng-container>
+        <span class="table__cell table__cell--total" *ngFor="let column of data.meta.columns; let i = index">
+                {{data.meta.total[column.key] ? data.meta.total[column.key] : 'total'}}
+        </span>
     </ng-container>
 </div>

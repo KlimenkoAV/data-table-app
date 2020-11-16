@@ -10,15 +10,8 @@ export class IconComponent {
   link = '/';
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.link = this.router.url;
-      }
-    });
     this.link = this.router.url;
   }
 
   @Input() icon: string;
-  @Input() fill = null;
-  @Input() stroke = null;
 }

@@ -3,10 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreditsPageComponent } from './pages/credits-page/credits-page.component';
 
 export const routes: Routes = [
-    {
-      path: '',
-      component: CreditsPageComponent
-    }
+    { path: '', component: CreditsPageComponent }
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { ExportData } from '../../interfaces/exportData.interface';
-import { AfterContentInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewChild,  } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-data-table',
@@ -7,20 +7,13 @@ import { AfterContentInit, ChangeDetectionStrategy, Component, ElementRef, Input
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss']
 })
-export class DataTableComponent implements OnInit, AfterContentInit, OnChanges {
+export class DataTableComponent implements OnChanges {
   @Input() data: ExportData;
   @ViewChild('table', {static: true}) private table: ElementRef;
 
-  ngOnInit(){
-  }
-
   ngOnChanges(sp: SimpleChanges){
-    if(sp.data && this.data ){
+    if (sp.data && this.data){
       this.table.nativeElement.style['grid-template-columns'] = `repeat(${this.data.meta.columns.length}, 1fr)`;
     }
   }
-
-  ngAfterContentInit(){
-  }
-  
 }

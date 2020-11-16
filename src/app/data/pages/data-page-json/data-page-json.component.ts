@@ -24,7 +24,6 @@ export class DataPageJsonComponent implements OnInit {
       startWith(1),
       switchMap(page => this.dataService.getJSON()),
     )
-    
   }
 
   onPageChange(page: number){

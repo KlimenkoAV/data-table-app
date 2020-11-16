@@ -5,16 +5,14 @@ import { DataPageJsonComponent } from './pages/data-page-json/data-page-json.com
 import { DataPageComponent } from './pages/data-page/data-page.component';
 
 export const routes: Routes = [
-  { path: '', 
-  component: DataPageComponent,
-  children:[
-    {
-      path: '', 
-      redirectTo: 'table', pathMatch: 'full' 
-    },
-    { path: 'table', component: DataPageTableComponent },
-    { path: 'json', component: DataPageJsonComponent },
-]
+  { 
+    path: '', 
+    component: DataPageComponent, 
+    children: [
+      { path: '', redirectTo: 'table', pathMatch: 'full' },
+      { path: 'table', component: DataPageTableComponent },
+      { path: 'json', component: DataPageJsonComponent },
+    ]
  },
 ];
 

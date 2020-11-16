@@ -6,6 +6,4 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   templateUrl: './data-page.component.html',
   styleUrls: ['./data-page.component.scss']
 })
-export class DataPageComponent {
- 
-}
+export class DataPageComponent {}
